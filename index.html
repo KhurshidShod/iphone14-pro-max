@@ -609,17 +609,17 @@
                     <div class="phone__clock-wrapper-addAlarm-content-top">
                         <button onclick="document.querySelector('.phone__clock-wrapper-addAlarm').style.bottom = '-150%'">Cancel</button>
                         <p>Add alarm</p>
-                        <button>Save</button>
+                        <button class="addAlarm-btn">Save</button>
                     </div>
                     <div class="phone__clock-wrapper-addAlarm-content-main">
                         <div class="alarmMenus">
-                            <input type="text" value="00" name="" id="alarmSoat">
+                            <input type="number" value="00" name="" maxlength="2" min="1" max="24" id="alarmSoat">
                             :
-                            <input type="text" value="00" name="" id="alarmMinut">
+                            <input type="text" value="00" name="" id="alarmMinut" min="0" max="59">
                         </div>
                         <div class="alarm-buttons">
                             <div class="alarm-buttons-button">
-                                <p>Music</p><input type="file" name="" id="">
+                                <label for="alarmMusic"><span>Music</span> <span id="musicName">Default ></span></label><input accept=".mp3, .wav" style="display: none;" type="file" name="" id="alarmMusic">
                             </div>
                         </div>
                     </div>

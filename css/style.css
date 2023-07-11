@@ -45,7 +45,7 @@
   justify-content: center;
   align-items: center;
   height: 95vh;
-  font-family: "San Fransisco";
+  font-family: "San Fransisco" !important;
   margin: 0 auto;
   overflow: hidden !important;
 }
@@ -1083,4 +1083,33 @@
 }
 .phone__clock-wrapper-addAlarm-content-main .alarmMenus input:first-child {
   text-align: end;
+}
+.phone__clock-wrapper-addAlarm-content-main .alarm-buttons {
+  width: 97%;
+  margin-top: 3rem;
+}
+.phone__clock-wrapper-addAlarm-content-main .alarm-buttons-button {
+  width: 100%;
+  background-color: gray;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.phone__clock-wrapper-addAlarm-content-main .alarm-buttons-button label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  color: white;
+  font-weight: 500;
+  height: 100%;
 }

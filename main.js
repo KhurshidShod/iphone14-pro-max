@@ -12,6 +12,7 @@ const webCam = new Webcam(webCamEl, "user", canvasEl);
 const snapAudio = new Audio("./audio/COMCell_Iphone camera (ID 0448)_BSB.wav");
 const lockAudio = new Audio("./audio/iPhone lock _ unlock (E863C26-MSB).mp3");
 var detectSecond = 0;
+var alarms = JSON.parse(localStorage.getItem("alarms")) || [];
 const calcButons = document.querySelectorAll(
   ".phone__calculator-content-buttons button"
 );
@@ -64,7 +65,6 @@ navigator.geolocation.getCurrentPosition(pos => {
         fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${data.address.city}?unitGroup=metric&key=YLDFDEM28Y6J63SSMR7LAFBHU&contentType=json`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             document.querySelector(".weather-cityName").innerHTML = `${data.address}`
             document.querySelector(".weather-max").innerHTML = `H:${data.days[0].tempmax.toPrecision(2)}&deg`
             document.querySelector(".weather-min").innerHTML = `L:${data.days[0].tempmin.toPrecision(2)}&deg`
@@ -107,6 +107,36 @@ const addPassword = (num) => {
     });
   }
 };
+setInterval(() => {
+    alarms.forEach(alarm => {
+        if(date.toLocaleTimeString('it-IT').slice(0, 5) == `${alarm.soat}:${alarm.minut}`){
+            // console.log(alarm.music.slice(5))
+            new Audio(alarm.music.slice(5)).play()
+            // alarmAudio.autoplay = true;
+            // alarmAudio.muted = true;
+            // alarmAudio.play()
+            alarms.splice((alarms.indexOf(alarm)), 1);
+            localStorage.setItem("alarms", JSON.stringify(alarms))
+        }
+    })
+}, 1000)
+var audioo = '';
+document.getElementById("alarmMusic").addEventListener("change", e => {
+    audioo = URL.createObjectURL(e.target.files[0]);
+    document.getElementById('musicName').innerHTML = e.target.files[0].name.slice(0, 15) + '... >'
+})
+document.querySelector(".addAlarm-btn").addEventListener("click", () => {
+    if(document.getElementById('alarmSoat').value >= 24 || document.getElementById('alarmMinut').value > 60 ){
+        alert('Mavjud vaqt kiriting')
+        return;
+    }
+    alarms.push({
+        soat: document.getElementById('alarmSoat').value,
+        minut: document.getElementById('alarmMinut').value,
+        music: audioo
+    })
+    localStorage.setItem("alarms", JSON.stringify(alarms))
+})
 
 document.querySelector(".capture").addEventListener("click", () => {
   snapAudio.play();
@@ -133,14 +163,10 @@ document
   .querySelector(".phone__camera-canvas")
   .addEventListener("touchend", (e) => {
     if (startingX + 200 < movingX) {
-        console.log("Right");
     } else if (startingX - 200 > movingX) {
-      console.log("Left");
     }
     if (startingY + 200 < movingY) {
-      console.log("Down");
     } else if (startingY - 100 > movingY) {
-      console.log("Up");
         document.querySelector(".phone__camera").style.display = "none";
         document.querySelector(`.phone__${detectCameraPrev}`).style.display =
           "flex";
@@ -164,14 +190,10 @@ document
   .querySelector(".phone__locked-main")
   .addEventListener("touchend", (e) => {
     if (startingX + 200 < movingX) {
-      console.log("Right");
     } else if (startingX - 200 > movingX) {
-      console.log("Left");
     }
     if (startingY + 200 < movingY) {
-      console.log("Down");
     } else if (startingY - 200 > movingY) {
-      console.log("Up");
     if(startingY + 300 > movingY){
         document.querySelector(".phone__locked-main").style.display = "none";
         document.querySelector(".phone__locked-password").style.display = "flex";
@@ -189,9 +211,7 @@ document.querySelector(".phone__locked").addEventListener("touchmove", (e) => {
 });
 document.querySelector(".phone__locked").addEventListener("touchend", (e) => {
   if (startingX + 200 < movingX) {
-    console.log("Right");
   } else if (startingX - 200 > movingX) {
-    console.log("Left");
     detectCameraPrev = "locked";
     if(startingY + 300 > movingY){
             document.querySelector(".phone__locked").style.display = "none";
@@ -200,9 +220,7 @@ document.querySelector(".phone__locked").addEventListener("touchend", (e) => {
     webCam.start();
   }
   if (startingY + 200 < movingY) {
-    console.log("Down");
   } else if (startingY - 200 > movingY) {
-    console.log("Up");
   }
 });
 document
@@ -221,15 +239,11 @@ document
   .querySelector(".phone__telephone")
   .addEventListener("touchend", (e) => {
     if (startingX + 700 < movingX) {
-      console.log("Right");
     } else if (startingX - 200 > movingX) {
-        console.log("Left");
     }
     if (startingY + 200 < movingY) {
-        console.log("Down");
     } else if (startingY - 200 > movingY) {
-        console.log("Up");
-        if(startingY + 400 > movingY){
+        if(startingY + 500 > movingY){
             document.querySelector(".phone__telephone").style.display = "none";
             document.querySelector(".phone__wrapper").style.display = "flex";
         }
@@ -241,37 +255,25 @@ document
   .addEventListener("touchstart", (e) => {
     startingX = e.touches[0].clientX;
     startingY = e.touches[0].clientY;
-    console.log(e.touches[0].clientX)
-    console.log(e.touches[0].clientX)
   });
 document
   .querySelector(".phone__calculator")
   .addEventListener("touchmove", (e) => {
     movingX = e.touches[0].clientX;
     movingY = e.touches[0].clientY;
-    console.log(e.touches[0].clientX)
-    console.log(e.touches[0].clientY)
   });
 document
   .querySelector(".phone__calculator")
   .addEventListener("touchend", (e) => {
     if (startingX + 700 < movingX) {
-      console.log("Right");
     } else if (startingX + 100 > movingX) {
-        console.log("Left");
     }
     if (startingY + 200 < movingY) {
-        console.log("Down");
     } else if (startingY - 200 > movingY) {
-        console.log("Up");
-        // console.log(startingY)
         if(startingY + 300 > movingY){
             document.querySelector(".phone__calculator").style.display = "none";
             document.querySelector(".phone__wrapper").style.display = "flex";
         }
-        // console.log(e.touches[0].clientX)
-        // console.log(e.touches[0].clientY)
-
     }
   });
 mainTime.textContent = `${checkHour(date.getHours())}:${checkHour(
@@ -286,7 +288,6 @@ time.forEach(
       date.getMinutes()
     )}</p>`)
 );
-if ("getBattery" in navigator) {
   navigator.getBattery().then((battery) => {
     batery.forEach(
       (bt) =>
@@ -297,7 +298,6 @@ if ("getBattery" in navigator) {
         }`)
     );
   });
-}
 calendarDay.textContent = week[date.getDay()];
 calendarDate.textContent = date.getDate();
 openCamBtn.addEventListener("click", () => {
