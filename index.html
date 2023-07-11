@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-light.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="phone__locked">
+        <div class="phone__locked-main">
+          <div class="phone__locked-main-top">
+            <div class="time"></div>
+            <div class="island"></div>
+            <div class="phone__locked-main-top-right">
+              <div class="battery">
+                <i class="fa-thin fa-battery-empty"></i>
+                <div class="battery__level"></div>
+              </div>
+              <i class="fa-duotone fa-signal"></i>
+              <i
+                class="fa-duotone fa-wifi"
+                style="--fa-primary-opacity: 10; --fa-secondary-opacity: 1"
+              ></i>
+            </div>
+          </div>
+          <div class="phone__locked-main-date">
+            <p>234</p>
+            <h1>23678</h1>
+          </div>
+          <div class="phone__locked-main-bottom">
+            <button><i class="fa-solid fa-flashlight"></i></button>
+            <button><i class="fa-solid fa-camera"></i></button>
+          </div>
+        </div>
+        <div class="phone__locked-password">
+          <div class="phone__locked-password-top">
+            <p>Enter Passcode</p>
+            <div class="phone__locked-password-top-dots">
+              <div class="phone__locked-password-top-dots-dot"></div>
+              <div class="phone__locked-password-top-dots-dot"></div>
+              <div class="phone__locked-password-top-dots-dot"></div>
+              <div class="phone__locked-password-top-dots-dot"></div>
+            </div>
+            <div class="phone__locked-password-top-numbers">
+              <div
+                onclick="addPassword(1)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>1</h1>
+              </div>
+              <div
+                onclick="addPassword(2)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>2</h1>
+                <div>
+                  <h1>A</h1>
+                  <h1>B</h1>
+                  <h1>C</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(3)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>3</h1>
+                <div>
+                  <h1>D</h1>
+                  <h1>E</h1>
+                  <h1>F</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(4)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>4</h1>
+                <div>
+                  <h1>G</h1>
+                  <h1>H</h1>
+                  <h1>I</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(5)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>5</h1>
+                <div>
+                  <h1>J</h1>
+                  <h1>K</h1>
+                  <h1>L</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(6)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>6</h1>
+                <div>
+                  <h1>M</h1>
+                  <h1>N</h1>
+                  <h1>O</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(7)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>7</h1>
+                <div>
+                  <h1>P</h1>
+                  <h1>Q</h1>
+                  <h1>R</h1>
+                  <h1>S</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(8)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>8</h1>
+                <div>
+                  <h1>T</h1>
+                  <h1>U</h1>
+                  <h1>V</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(9)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>9</h1>
+                <div>
+                  <h1>W</h1>
+                  <h1>X</h1>
+                  <h1>Y</h1>
+                  <h1>Z</h1>
+                </div>
+              </div>
+              <div
+                onclick="addPassword(0)"
+                class="phone__locked-password-top-numbers-number"
+              >
+                <h1>0</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone__wrapper">
+        <div class="phone__top">
+          <div class="time"></div>
+          <div class="island"></div>
+          <div class="phone__top-right">
+            <div class="battery">
+              <i class="fa-thin fa-battery-empty"></i>
+              <div class="battery__level"></div>
+            </div>
+            <i class="fa-duotone fa-signal"></i>
+            <i class="fa-duotone fa-wifi-slash"></i>
+          </div>
+        </div>
+        <div class="phone__content">
+          <div class="phone__content-big">
+            <div class="phone__content-big-weather big-app">
+              <div class="phone__content-big-weather-top">
+                <h3 class="weather-cityName"></h3>
+                <h1 class="weather-gradus"></h1>
+              </div>
+              <div class="phone__content-big-weather-bottom">
+                <img src="" alt="" />
+                <p class="weather-condition"></p>
+                <div>
+                  <p class="weather-max"></p>
+                  <p class="weather-min"></p>
+                </div>
+              </div>
+              <p class="card-name">Weather</p>
+            </div>
+            <div class="phone__content-big-calendar big-app">
+              <h5>MONDAY</h5>
+              <h1>15</h1>
+              <h3>No events today</h3>
+              <p class="card-name">Calendar</p>
+            </div>
+          </div>
+          <div class="phone__content-minors">
+            <img src="images/clock.png" alt="" />
+            <img onclick='openApp("telephone")' src="images/tel.png" alt="" />
+            <img src="images/mess.png" alt="" />
+            <img src="images/settings.png" alt="" />
+            <img src="images/map.png" alt="" />
+            <img src="images/notes.png" alt="" />
+            <img
+              onclick='openApp("calculator")'
+              src="images/calculator.png"
+              alt=""
+            />
+            <img onclick='openApp("camera")' src="images/camera.png" alt="" />
+          </div>
+        </div>
+        <div class="phone__bottom">
+          <img onclick='openApp("telephone")' src="images/tel.png" alt="" />
+          <img src="images/mess.png" alt="" />
+          <img src="images/98146ec63f05240c321a82f8b35a31c0.png" alt="" />
+          <img src="images/mus.png" alt="" />
+        </div>
+      </div>
+      <div class="phone__camera">
+        <div class="phone__camera-top"></div>
+        <div class="phone__camera-canvas">
+          <video
+            src=""
+            height="700"
+            id="cameraVideo"
+            autoplay
+            playsinline
+          ></video>
+          <canvas id="camCanvas"></canvas>
+        </div>
+        <div class="phone__camera-bottom">
+          <a download class="capture"></a>
+        </div>
+      </div>
+      <div class="phone__calculator">
+        <div class="phone__calculator-top">
+          <div class="time"></div>
+          <div class="island"></div>
+          <div class="phone__calculator-top-right">
+            <div class="battery">
+              <i class="fa-thin fa-battery-empty"></i>
+              <div class="battery__level"></div>
+            </div>
+            <i class="fa-duotone fa-signal"></i>
+            <i
+              class="fa-duotone fa-wifi"
+              style="--fa-primary-opacity: 10; --fa-secondary-opacity: 1"
+            ></i>
+          </div>
+        </div>
+        <div class="phone__calculator-content">
+          <input
+            type="text"
+            class="phone__calculator-content-display"
+            readonly
+          />
+          <div class="phone__calculator-content-buttons">
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value = ''"
+              class="calcGreyBtn"
+            >
+              AC
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value > 0 ? document.querySelector('.phone__calculator-content-display').value = `-${document.querySelector('.phone__calculator-content-display').value}` : document.querySelector('.phone__calculator-content-display').value = document.querySelector('.phone__calculator-content-display').value.split('').pop()"
+              class="calcGreyBtn"
+            >
+              +/-
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '%'"
+              class="calcGreyBtn"
+            >
+              %
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '/'"
+              class="calcYellowBtn"
+            >
+              /
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '7'"
+            >
+              7
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '8'"
+            >
+              8
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '9'"
+            >
+              9
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '*'"
+              class="calcYellowBtn"
+            >
+              x
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '4'"
+            >
+              4
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '5'"
+            >
+              5
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '6'"
+            >
+              6
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '-'"
+              class="calcYellowBtn"
+            >
+              -
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '1'"
+            >
+              1
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '2'"
+            >
+              2
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '3'"
+            >
+              3
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '+'"
+              class="calcYellowBtn"
+            >
+              +
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '0'"
+              class="calcBtn0"
+            >
+              0
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value += '.'"
+            >
+              .
+            </button>
+            <button
+              onclick="document.querySelector('.phone__calculator-content-display').value = eval(document.querySelector('.phone__calculator-content-display').value)"
+              class="calcYellowBtn"
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="phone__telephone">
+        <div class="phone__telephone-top">
+          <div class="time"></div>
+          <div class="island"></div>
+          <div class="phone__telephone-top-right">
+            <div class="battery">
+              <i class="fa-thin fa-battery-empty"></i>
+              <div class="battery__level"></div>
+            </div>
+            <i class="fa-duotone fa-signal"></i>
+            <i
+              class="fa-duotone fa-wifi"
+              style="--fa-primary-opacity: 10; --fa-secondary-opacity: 1"
+            ></i>
+          </div>
+        </div>
+        <div class="phone__telephone-wrapper">
+          <h2 id="telDisplay"></h2>
+          <div class="phone__telephone-wrapper-buttons">
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '1';
+                document.getElementById('telHref').href += '1';
+                }"
+            >
+              <h1>1</h1>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '2';
+                document.getElementById('telHref').href += '2';
+                }"
+            >
+              <h1>2</h1>
+              <div>
+                <h1>A</h1>
+                <h1>B</h1>
+                <h1>C</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '3';
+                document.getElementById('telHref').href += '3';
+                }"
+            >
+              <h1>3</h1>
+              <div>
+                <h1>D</h1>
+                <h1>E</h1>
+                <h1>F</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '4';
+                document.getElementById('telHref').href += '4';
+                }"
+            >
+              <h1>4</h1>
+              <div>
+                <h1>G</h1>
+                <h1>H</h1>
+                <h1>I</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '5';
+                document.getElementById('telHref').href += '5';
+                }"
+            >
+              <h1>5</h1>
+              <div>
+                <h1>J</h1>
+                <h1>K</h1>
+                <h1>L</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '6';
+                document.getElementById('telHref').href += '6';
+                }"
+            >
+              <h1>6</h1>
+              <div>
+                <h1>M</h1>
+                <h1>N</h1>
+                <h1>O</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '7';
+                document.getElementById('telHref').href += '7';
+                }"
+            >
+              <h1>7</h1>
+              <div>
+                <h1>P</h1>
+                <h1>Q</h1>
+                <h1>R</h1>
+                <h1>S</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '8';
+                document.getElementById('telHref').href += '8';
+                }"
+            >
+              <h1>8</h1>
+              <div>
+                <h1>T</h1>
+                <h1>U</h1>
+                <h1>V</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '9';
+                document.getElementById('telHref').href += '9';
+                }"
+            >
+              <h1>9</h1>
+              <div>
+                <h1>W</h1>
+                <h1>X</h1>
+                <h1>Y</h1>
+                <h1>Z</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '';
+                document.getElementById('telHref').href += '';
+                }"
+            >
+              <h1>*</h1>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '0';
+                document.getElementById('telHref').href += '0';
+                }"
+            >
+              <h1>0</h1>
+              <div>
+                <h1>+</h1>
+              </div>
+            </div>
+            <div
+              class="phone__telephone-wrapper-buttons-button"
+              onclick="{
+                new Audio('./audio/iPhone Keyboard Typing Sound (mp3cut.net) (1).mp3').play()
+                document.getElementById('telDisplay').textContent += '#';
+                document.getElementById('telHref').href += '#';
+                }"
+            >
+              <h1>#</h1>
+            </div>
+            <div class="phone__telephone-wrapper-buttons-bottom">
+              <a
+                href="tel:+"
+                id="telHref"
+                class="phone__telephone-wrapper-buttons-bottom-button"
+              >
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <div
+                class="phone__telephone-wrapper-buttons-bottom-button delBtn"
+                onclick="
+                {
+                document.getElementById('telDisplay').textContent = document.getElementById('telDisplay').textContent.split('').splice(0, document.getElementById('telDisplay').textContent.split('').length - 1).join('');
+                document.getElementById('telHref').href = document.getElementById('telHref').href.split('').splice(0, document.getElementById('telHref').href.split('').length - 1).join('');
+            }
+                "
+              >
+                <i class="fa-solid fa-delete-left"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone__clock">
+        <div class="phone__clock-top">
+          <div class="time"></div>
+          <div class="island"></div>
+          <div class="phone__clock-top-right">
+            <div class="battery">
+              <i class="fa-thin fa-battery-empty"></i>
+              <div class="battery__level"></div>
+            </div>
+            <i class="fa-duotone fa-signal"></i>
+            <i
+              class="fa-duotone fa-wifi"
+              style="--fa-primary-opacity: 10; --fa-secondary-opacity: 1"
+            ></i>
+          </div>
+        </div>
+        <div class="phone__clock-wrapper">
+            <div class="phone__clock-wrapper-top">
+                <h1>Alarm</h1>
+                <button onclick="document.querySelector('.phone__clock-wrapper-addAlarm').style.bottom = '0'">+</button>
+            </div>
+            <div class="phone__clock-wrapper-addAlarm">
+                <div class="phone__clock-wrapper-addAlarm-content">
+                    <div class="phone__clock-wrapper-addAlarm-content-top">
+                        <button onclick="document.querySelector('.phone__clock-wrapper-addAlarm').style.bottom = '-150%'">Cancel</button>
+                        <p>Add alarm</p>
+                        <button>Save</button>
+                    </div>
+                    <div class="phone__clock-wrapper-addAlarm-content-main">
+                        <div class="alarmMenus">
+                            <input type="text" value="00" name="" id="alarmSoat">
+                            :
+                            <input type="text" value="00" name="" id="alarmMinut">
+                        </div>
+                        <div class="alarm-buttons">
+                            <div class="alarm-buttons-button">
+                                <p>Music</p><input type="file" name="" id="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script></script>
+  </body>
+</html>
