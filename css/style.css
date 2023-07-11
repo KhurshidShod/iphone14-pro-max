@@ -358,7 +358,7 @@
   -moz-border-radius: 55px;
   -ms-border-radius: 55px;
   -o-border-radius: 55px;
-  display: none;
+  display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
@@ -900,7 +900,7 @@
   -moz-border-radius: 55px;
   -ms-border-radius: 55px;
   -o-border-radius: 55px;
-  display: flex;
+  display: none;
   justify-content: space-between;
   flex-direction: column;
   padding: 0.5rem;
